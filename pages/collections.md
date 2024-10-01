@@ -1,7 +1,7 @@
 ---
-title: Browse
+title: Browse Collections
 layout: browse
 permalink: /home/collections.html
 ---
 
-## Browse Items
+## Browse Digital Collections
