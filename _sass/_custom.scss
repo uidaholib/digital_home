@@ -10,11 +10,10 @@
 #nav-logo {
     max-height: 45px;
 }
-
-// make library logo bigger
-#footer-logo {
-    height: 65px;
+.bg-dark {
+    background-color: #191919 !important;
 }
+
 // fix pride gold outlines
 .btn-outline-primary, .btn-outline-pride-gold {
     color: #191919;
@@ -22,14 +21,21 @@
 
 
 /* override icon styles */
-.bi {
-    vertical-align: middle;
-}
-.icon-inline {
-    vertical-align: text-bottom;
-}
 .icon-nav {
     width: 1em;
     height: 1em;
     vertical-align: -0.1em;
+}
+
+/* footer */
+footer, footer a {
+    color:white !important;
+    font-weight: 300;
+    background-color: #191919;
+}
+#footer-logo {
+    max-height: 120px;
+}
+.border-pride-gold {
+    border-color: #F1B300 !important;
 }
