@@ -1,7 +1,11 @@
 ---
 title: Timeline
-layout: timeline
+layout: page
 permalink: /home/timeline.html
 ---
 
-## Collection Timeline
+## Timeline of Collections
+
+Browse collections by the start and end date of their contents.
+
+{% include feature/timelinejs.html json="/home/assets/data/timelinejs.json" %}
