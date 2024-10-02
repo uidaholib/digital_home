@@ -1,7 +1,7 @@
 {%- assign fields = site.data.config-search -%}
 {%- assign index_fields = fields | where: 'index','true' -%}
 <script src="{{ '/js/lunr.min.js' | prepend: site.digital-assets }}"></script>
-<script src="{{ '/assets/js/lunr-store.js' | relative_url }}"></script>
+<script src="{{ '/home/assets/js/lunr-store.js' | relative_url }}"></script>
 <script>
 /* initialize lunr */
 var idx = lunr(function () {
