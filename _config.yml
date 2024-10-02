@@ -23,9 +23,9 @@ lib-media: https://www.lib.uidaho.edu/media
 # SITE SETTINGS
 #
 # title of site appears in banner
-title: Digital Collections, University of Idaho
+title: Digital Collections - University of Idaho Library
 # tagline, a short phrase that will appear throughout the site in the top banner
-tagline: Digital Collection Magic with Static Web Technologies
+tagline: 
 # description appears in meta tags and other locations
 # this description might appear in search result lists, keep around 160 characters max
 description: "University of Idaho Library Digital Collections provide access to unique materials to enhance and support research and education."
