@@ -4,7 +4,7 @@
 # current using relative_url due to jekyll bug, should be absolute_url in production!
 # to just feature parent objects of compound objects, you will want to change the where_exp below to "where_exp: 'item','item.parentid == nil'"
 ---
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' | where_exp: 'item', 'item.date' -%}
+{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid and item.search_index and item.status == "published" and item.date_start' -%}
 {
     "title": {
         "media": {
@@ -22,15 +22,23 @@
         "media": {
           "url": "{{ item.image_small | default: item.image_thumb | default: item.object_location | relative_url }}",
           "caption": {{ item.title | jsonify }},
-          "link": "{{ '/items/' | relative_url }}{% if item.parentid %}{{ item.parentid }}.html#{{ item.objectid }}{% else %}{{ item.objectid }}.html{% endif %}"
+          "link": "{{ item.url }}"
         },
         "start_date": { 
-          {% if item.date contains '-' %}{% assign dates = item.date | strip | split: '-' %}
+          {% if item.date_start contains '-' %}{% assign dates = item.date_start | strip | split: '-' %}
           "month": "{{ dates[1] }}",
           "day": "{{ dates[2] }}",
-          "year": "{{ dates[0] }}"{% elsif item.date contains '/' %}"year": "{{ item.date | strip | split: '/' | last }}"{% else %}
-          "year": "{{ item.date }}"{% endif %}
+          "year": "{{ dates[0] }}"{% elsif item.date_start contains '/' %}"year": "{{ item.date_start | strip | split: '/' | last }}"{% else %}
+          "year": "{{ item.date_start }}"{% endif %}
         },
+        {% if item.date_end %}
+        "end_date": { 
+          {% if item.date_end contains '-' %}{% assign dates = item.date_end | strip | split: '-' %}
+          "month": "{{ dates[1] }}",
+          "day": "{{ dates[2] }}",
+          "year": "{{ dates[0] }}"{% elsif item.date_end contains '/' %}"year": "{{ item.date_end | strip | split: '/' | last }}"{% else %}
+          "year": "{{ item.date_end }}"{% endif %}
+        },{% endif %}
         "text": {
           "headline": {{ item.title | jsonify }}{% if item.description %},
           "text": {{ item.description | jsonify }}{% endif %}

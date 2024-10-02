@@ -1,7 +1,8 @@
 ---
+# customized for collections data
 # "Data" page with table and data download options
 layout: page
-custom-foot: js/table-js.html 
+custom-foot: js/collections-data-table-js.html 
 ---
 {% assign fields = site.data.config-table | map: 'display_name' %}
 {% include data-download-modal.html %}
