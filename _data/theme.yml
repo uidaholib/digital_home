@@ -9,6 +9,7 @@
 # featured image is used in home page banner and in meta markup to represent the collection
 # use either an objectid (from an item in this collect), a relative location of an image in this repo, or a full url to an image elsewhere
 featured-image: https://www.lib.uidaho.edu/media/digital/small/uihistorical.jpg
+featured-image-alt: historic photograph of old admin building on campus
 # optional: add extra padding around collection title for a larger image feature. 
 
 ##########
