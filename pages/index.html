@@ -2,6 +2,7 @@
 layout: default
 title: Home
 permalink: /
+custom-foot: js/index-js.html
 ---
 <style>
     #home-title-box {
@@ -11,27 +12,36 @@ permalink: /
 </style>
 
 <div id="home-banner" class="mb-0 p-0 position-relative">
-    <div id="home-title-box" class="row justify-content-center">
-        <div class="col-md-8 pb-4">
-            <form role="search" id="collection-search" action="https://digital.lib.uidaho.edu/search">
-                <div class="input-group input-group-lg">
-                    <input type="search" name="search_terms" class="form-control" id="search-collections" placeholder="Search all items..." >    
-                    <button class="btn btn-primary" type="submit" title="Submit search" id="search-collections-button" >Search</button>
-                </div>
-            </form>
-        </div>
-        <div class="col-md-8 text-center">
-            <div class="card bg-dark bg-opacity-75">
-                <div class="card-body">
-                    <h5 class="card-title text-light">Browse Suggested Topics:</h5>
-                        {% for b in buttons %}
-                        {%- if b.button == 'btn' -%}
-                        <a class="btn btn-light my-2 mx-1" href="{{ b.title | strip | url_param_escape | prepend: '/collections.html#' | relative_url }}">{{ b.title }}</a>
-                        {% endif %}
-                        {%- endfor -%}
-                        <br>
-                    <a class="btn btn-info mt-4 mx-2 px-3" href="{{ '/home/collections.html' | relative_url }}">Browse All Collections</a>
-                    
+    <div class="container">
+        <div id="home-title-box" class="row justify-content-center">
+            <div class="col-md-8 pb-5">
+                <form role="search" id="collection-search" class="border border-dark rounded-3 border-3 border-opacity-75 bg-dark bg-opacity-75" action="https://digital.lib.uidaho.edu/search">
+                    <div class="input-group input-group-lg ">
+                        <input type="search" name="search_terms" class="form-control" id="search-collections" placeholder="Search all items..." >    
+                        <button class="btn btn-primary" type="submit" title="Submit search" id="search-collections-button" >Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-9">
+                <div class="card bg-dark bg-opacity-75">
+                    <div class="card-body">
+                        <div class="text-center">
+                        <h2 class="card-title text-light h4">Browse Collection Topics:</h2>
+                        {% assign topics = "Agriculture;Dams;Fire;Forests;Jazz;Mining;Oral History;Religion;Wilderness" | split: ';' %}
+                        {% for t in topics %}
+                        <a class="btn btn-light my-2 mx-1" href="{{ '/home/collections.html' | relative_url }}#{{ t | url_param_escape }}">{{ t }}</a>
+                        {% endfor %}<br>
+                        <a class="btn btn-info mt-4 mx-2 px-3" href="{{ '/home/collections.html' | relative_url }}">Browse All Collections</a>
+                        </div>
+                        <div class="text-end">
+                        <a tabindex="0" role="button" class="btn btn-outline-light ms-2 popover-dismiss" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-title="Digital Collection Tips" data-bs-content="Use the search box above to query all items in our complete digital collections index. To find individual collections, explore the browse options below or in the navigation.">
+                            <span class="visually-hidden">Tips</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+                            </svg>
+                        </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
