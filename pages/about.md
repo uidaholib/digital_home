@@ -8,21 +8,24 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="https://cdil.lib.uidaho.edu/images/palouse_sm.jpg" %} 
+{% include feature/jumbotron.html objectid="https://objects.lib.uidaho.edu/campus/campus00811.jpg" heading="Digital Collections" text="University of Idaho Library" padding="6em" %} 
 
 ## About Digital Collections
 
 University of Idaho Library Digital Collections make tens of thousands of rare and unique items openly available online for research and learning.
 The unique content includes digitized and born-digital materials curated by [Special Collections and Archives](https://www.lib.uidaho.edu/special-collections/), community partners, and scholarship projects.
 
-Digital Collections contains over [120 collection websites and exhibits]({{ '/home/collections.html' | relative_url }}), each providing features to browse, explore, and understand the items with meaningful context. 
+Digital Collections contains over [120 custom collection websites and exhibits]({{ '/home/collections.html' | relative_url }}), each providing features to browse, explore, and understand the items with meaningful context. 
 All individual items can also be discovered in our complete [search index](https://digital.lib.uidaho.edu/search) featuring tools to filter, sort, and search through thousands of records and full text data.
 
-These resources are created and maintained by the Library's Digital Collections Team, a collaborative partnership between [Special Collections and Archives](https://www.lib.uidaho.edu/special-collections/) and the [Center for Digital Inquiry and Learning (CDIL)](https://cdil.lib.uidaho.edu/).
+Collection strengths include [jazz]({{ '/home/collections.html#Jazz' | relative_url }}), Idaho [mining]({{ '/home/collections.html#Mining' | relative_url }}) and [wilderness]({{ '/home/collections.html#Wilderness' | relative_url }}), and [U of I history]({{ '/home/collections.html#campus' | relative_url }}).
+
+These resources are created and maintained by the Library's Digital Collections Team, a collaborative effort between [Special Collections and Archives](https://www.lib.uidaho.edu/special-collections/) and the [Center for Digital Inquiry and Learning (CDIL)](https://cdil.lib.uidaho.edu/).
 New items, collections, and exhibits are continually added, along with ongoing work to enrich metadata and enhance useability.
 Contributors include employees across the library, student workers, fellows, researchers, and community partners.
+Our most up to date procedures and standards are shared at our [Digital Collections Documentation site](https://uidaholib.github.io/digital-collections-docs/).
 
-We invite you to explore and discover our unique collections!
+We invite you to explore, discover, and enjoy our unique collections!
 
 <a href="/search" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg> Digital Collections Search</a>
 <a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_eqZdsQyel8sKBAG?source_link=https://www.lib.uidaho.edu/digital/home/about.html" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg> Contact Form</a>
@@ -48,16 +51,28 @@ The University of Idaho's [Center for Digital Inquiry and Learning](https://cdil
 
 ## History
 
-The Digital Initiatives department digitizes. That may not come as a surprise, but despite the fact that it is not all we do, digitization -- including the scanning of photographs, feed scanning of books, conversion of legacy files, batch processing of born-digital files, and other tasks -- is the foundation by which we build our collections and web sites and through which we digitally preserve institutional, local and scholarly material and resources.
-
-But, again, digitizing is not all we do. We also work with departments, schools, librarians, citizens, machines, code, and each other to provide guidance on digital tools, projects and preservation, and to identify, acquire, and promote new collections.
-
-The department was established in 2008 with an initial charge to digitize and make accessible the library's renowned International Jazz Collections. Material from the Jazz Collections continue to be added to this day, and we continue to build on our collections. We currently maintain over a hundred digital collections and applications, and work that begun in the lab has now been incorporated into a library department, Digital Scholarship and Open Strategies, and a University center, the [Center for Digital Inquiry and Learning (CDIL)](https://cdil.lib.uidaho.edu).
-
-Our most up to date procedures and standards are shared at our [Digital Collections Documentation site](https://uidaholib.github.io/digital-collections-docs/).
-
-The majority of the scanning and computer work that we do in Digital Initiatives is done in the Lau Center for Digital Scholarship, or Room 211, which is also known as the [Center for Digital Inquiry and Learning](https://cdil.lib.uidaho.edu/) and the Digital Scholarship Lab. Regardless of what it's called, the room 211 is on the second floor of the library. 
-
+Digital collections at U of I Library started in 2008 with an initial charge to digitize and make accessible the library's renowned [International Jazz Collections](https://www.ijc.uidaho.edu/). 
+The Digital Initiatives department was established advance work on digitization, metadata, digital preservation, digital collections, and web sites, with a physical location in Library room 211.
 Originally constructed as a space to support the research interests of the university -- David and Ann Lau donated funds in the 1990s to what was then the Lau Periodicals Service Center in honor of David's parents, Heber and Rhea -- the center was re-dedicated in April 2011 to acknowledge its function as the digital heart of the library.
+As the services of the unit and needs of the campus continued to expand, Digital Initiatives grew into a campus digital scholarship center, the [Center for Digital Inquiry and Learning (CDIL)](https://cdil.lib.uidaho.edu) in 2016.
 
-In 2016, the library and CLASS received a Vandals Ideas Grant to revamp the space and add capacity for working with faculty from CLASS. New furniture and technology was introduced into the room, which now often houses classes and workshops in addition to the students and faculty that work on various projects in the space.
+As past digital initiatives librarians mused:
+
+> The Digital Initiatives department digitizes. That may not come as a surprise, but despite the fact that it is not all we do, digitization -- including the scanning of photographs, feed scanning of books, conversion of legacy files, batch processing of born-digital files, and other tasks -- is the foundation by which we build our collections and web sites and through which we digitally preserve institutional, local and scholarly material and resources.
+> 
+> But, again, digitizing is not all we do. We also work with departments, schools, librarians, citizens, machines, code, and each other to provide guidance on digital tools, projects and preservation, and to identify, acquire, and promote new collections.
+{:.blockquote .p-3}
+
+Digital collections are a collaborative and ever evolving effort to open access and understanding to fascinating resources.
+
+## Contact
+
+<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_eqZdsQyel8sKBAG?source_link=https://www.lib.uidaho.edu/digital/home/about.html" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg> Contact Form</a>
+
+- [Evan Williamson](https://www.lib.uidaho.edu/about/people/ewilliamson.html), Unit Head for Digital Scholarship and Open Strategies
+Digital; Digital Infrastructure Librarian; Co-Director of CDIL
+- [Andrew Weymouth](https://www.lib.uidaho.edu/about/people/aweymouth.html), Digital Initiatives Librarian
+- [Kevin Dobbins](https://www.lib.uidaho.edu/about/people/kdobbins.html), Digital Labs Manager
+- [Maryelizabeth Koepele](https://www.lib.uidaho.edu/about/people/mkoepele.html), Digital Projects Manager
+- [Devin Becker](https://www.lib.uidaho.edu/about/people/dbecker.html), Associate Dean Research and Instruction; Co-Director of CDIL
+
