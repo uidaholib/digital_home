@@ -1,4 +1,5 @@
 {% comment %} 
+CUSTOMIZED!
 
     Featured Terms button-links.
     This include creates a card with btn links to the Browse page from a set of automatically generated or manually selected terms. Either use the "field" option to auto generate *or* the "featured" option to manually create list of terms.
@@ -40,13 +41,5 @@
 {% for i in uniqTerms limit: termsMax %}{{ i[0] }};{% endfor %}{% endcapture %}
 {% assign topTerms = topTerms | split: ";" %}
 {%- endif -%}
-<div class="card mb-3">
-    {% if include.header %}<h2 class="card-header h5">{{ include.header }}</h2>{% endif %}
-    <div class="card-body">
-        {% if include.title %}<h2 class="card-title h5">{{ include.title }}</h2>{% endif %}
-        <p class="card-text">
-            {% for s in topTerms %}
-            <a class="btn btn-sm btn-{{ include.btn-color | default: 'primary' }} m-1" href="{{ s | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ s | strip }}</a>{% endfor %}
-        </p>
-    </div>
-</div>
+{% for s in topTerms %}
+<a class="btn btn-sm btn-{{ include.btn-color | default: 'primary' }} m-1" href="{{ s | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ s | strip }}</a>{% endfor %}
