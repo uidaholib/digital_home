@@ -4,7 +4,7 @@
 # Requires CB's array_count_uniq.rb plugin!
 ---
 {%- if site.data.theme.locations-fields -%}
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' -%}
+{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid and item.status == "published"' -%}
 {%- assign locations-fields = site.data.theme.locations-fields | split: ";" -%}
 {%- assign places = "" -%}
 {%- for c in locations-fields -%}
