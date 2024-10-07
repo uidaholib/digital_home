@@ -22,10 +22,8 @@
         { 
             {% for f in fields %}{% if item[f.field] %}{{ f.field | escape | jsonify }}:{{ item[f.field] | strip | escape | jsonify }}, {%- endif -%}{%- endfor -%}
             {% if item.image_thumb %}"img": {{ item.image_thumb | relative_url | jsonify }},{% endif %}
-            {% if item.display_template %}"template": {{ item.display_template | escape | jsonify }}, {%- endif -%}
-            {% if item.format %}"format": {{ item.format | escape | jsonify }}, {%- endif -%}
             {% if item.image_alt_text %}"alt": {{ item.image_alt_text | escape | jsonify }}, {%- endif -%}
-            "title": {{ item.title | escape | jsonify }}, "link": "{% if item.parentid %}{{ item.parentid }}.html#{{ item.objectid }}{% else %}{{ item.objectid }}.html{% endif %}",
+            "title": {{ item.title | escape | jsonify }}, "link": "{{ item.url }}",
             "id": {{ item.objectid | jsonify }} 
         } }{% unless forloop.last %}, {% endunless %}{% endfor %}
         ]};
@@ -116,15 +114,13 @@
             {% if site.data.theme.map-search == true %}/* bind feature for search */
             feature.layer = layer;{% endif %}
             // find item link
-            var itemHref = '{{ "/items/" | relative_url }}' + feature.properties.link;
+            var itemHref = feature.properties.link;
             // find image
             var imgAlt = feature.properties.alt ? feature.properties.alt : feature.properties.title;
             var thumbImg;
             if (feature.properties.img) {
                 thumbImg = '<img class="map-thumb" src="' + feature.properties.img + '" alt="' + imgAlt + '">';
-            } else {
-                thumbImg = getIcon(feature.properties.template,feature.properties.format,"thumb")
-            }
+            } 
             // set up popup content
             var popupTemplate = '<h2 class="h4"><a class="text-dark" href="' + itemHref + '">' +
                 feature.properties.title + '</a></h2><div class="text-center"><a href="' + itemHref + 
@@ -134,7 +130,7 @@
                 popupTemplate += '<strong>{{ f.display_name }}:</strong> ' + feature.properties[{{ f.field | escape | jsonify }}] + '<br>'; 
             }
             {% endif %}{% endfor %}
-            popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >View Item</a></div>';
+            popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >Visit Collection</a></div>';
             layer.bindPopup(popupTemplate);
         }
         function objectMarkers(feature,latlng) {
