@@ -8,41 +8,7 @@ credits: true
 # Look in _includes/feature for options to easily add features to the page
 ---
 
-{% include feature/jumbotron.html objectid="https://objects.lib.uidaho.edu/campus/campus00811.jpg" heading="Digital Collections" text="University of Idaho Library" padding="6em" %} 
-
-[test](){:.btn .btn-raspberry}
-
-[test](){:.btn .btn-garnet2}
-
-[test](){:.btn .btn-lupine}
-
-[test](){:.btn .btn-huckleberry}
-
-[test](){:.btn .btn-clearwater2}
-
-[test](){:.btn .btn-palouse}
-
-[test](){:.btn .btn-leather}
-
-[test](){:.btn .btn-bark}
-
-[test](){:.btn .btn-outline-raspberry}
-
-[test](){:.btn .btn-outline-garnet2}
-
-[test](){:.btn .btn-outline-lupine}
-
-[test](){:.btn .btn-outline-huckleberry}
-
-[test](){:.btn .btn-outline-clearwater2}
-
-[test](){:.btn .btn-outline-palouse}
-
-[test](){:.btn .btn-outline-leather}
-
-[test](){:.btn .btn-outline-bark}
-
-
+{% include feature/jumbotron.html objectid="https://objects.lib.uidaho.edu/campus/campus00811.jpg" heading="Digital Collections" text="University of Idaho Library" padding="6em" %}
 
 ## About Digital Collections
 
