@@ -89,14 +89,18 @@ custom-foot: js/index-js.html
             <div class="card h-100">
                 <div class="card-body">
                     <h3 class="card-title h4">Total Collections</h3>
-                    <p class="card-text"><svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/home/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg> {{ items | size }}</p>
+                    <p class="card-text">
+                        <a href="{{ '/home/collections.html' | relative_url }}"><svg class="bi icon-sprite" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/home/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg> {{ items | size }}</a>
+                    </p>
                     <h3 class="card-title h4">Total Items</h3>
                     {% assign items_count = 0 %}{% for i in items %}{% assign items_count = items_count | plus: i.item_count %}{% endfor %}
-                    <p class="card-text"><svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/home/assets/lib/cb-icons.svg' | relative_url }}#icon-record"/></svg> {{ items_count }}</p>
+                    <p class="card-text">
+                        <a href="https://digital.lib.uidaho.edu/search"><svg class="bi icon-sprite" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/home/assets/lib/cb-icons.svg' | relative_url }}#icon-record"/></svg> {{ items_count }}</a>
+                    </p>
                     <h3 class="card-title h4">Time Span</h3>
                     <p class="card-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi icon-sprite text-body" viewBox="0 0 16 16"><path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/><path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></svg>
-                        {% include index/time.html %}
+                        <a href="{{ '/home/timeline.html' | relative_url }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/><path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></svg>
+                        {% include index/time.html %}</a>
                     </p>
                 </div>
             </div>
