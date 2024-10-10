@@ -10,7 +10,9 @@ credits: true
 
 {% include feature/jumbotron.html objectid="https://objects.lib.uidaho.edu/campus/campus00811.jpg" heading="Digital Collections" text="University of Idaho Library" padding="6em" %}
 
-## About Digital Collections
+{% include feature/nav-menu.html sections="About Digital Collections;CollectionBuilder;History;Contact" %}
+
+# About Digital Collections
 
 University of Idaho Library Digital Collections make tens of thousands of rare and unique items openly available online for research and learning.
 The unique content includes digitized and born-digital materials curated by [Special Collections and Archives](https://www.lib.uidaho.edu/special-collections/), community partners, and scholarship projects.

@@ -8,7 +8,7 @@ cloud-fields: site.data.theme.subjects-fields
 button: outline-palouse
 ---
 
-## Browse Subjects
+# Browse Subjects
 
 Use this word cloud visualization to browse terms and subjects present in U of I’s Digital Collections. 
 Word size is determined by frequency and all words link to browse related collections.

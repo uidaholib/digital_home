@@ -4,7 +4,7 @@ layout: page
 permalink: /home/timeline.html
 ---
 
-## Timeline of Collections
+# Timeline of Collections
 
 Browse collections by the start and end date of their contents.
 

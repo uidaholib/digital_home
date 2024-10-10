@@ -4,4 +4,4 @@ layout: browse
 permalink: /home/collections.html
 ---
 
-## Browse Digital Collections
+# Browse Digital Collections
