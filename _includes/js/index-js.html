@@ -3,3 +3,35 @@
     const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
     
 </script>
+<script>{% assign carousel-items = site.data.index-carousel %}
+    /* add item data */
+    // title,text,src,btn,link
+    var carouselItems = {{ carousel-items | jsonify }};
+    
+    /* shuffle items */
+    carouselItems.sort(function() { return 0.5 - Math.random() });
+
+    /* add items to carousel */
+    var carousel = document.getElementById("carouselInner");
+    var carouselIndicators = document.getElementById("carouselIndicators");
+    var slides = "";
+    var indicators = "";
+    var i;
+    for (i=0; i < {{ carousel-items | size }}; i++) { 
+        // create indicator 
+        indicator = `<button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="${i.toString()}" ${ i == 0 ? 'class="active" aria-current="true" ' : '' }aria-label="Slide ${i.toString()}"></button>`;
+        // create slide
+        slide = `<div class="carousel-item py-2${ i == 0 ? ' active' : '' }">
+            <img class="lazyload" alt="${carouselItems[i].alt}" data-src="${carouselItems[i].src}">
+            <div class="carousel-caption">
+                <h3 class="carousel-item-title text-white py-2 h6">${carouselItems[i].title}</h3>
+                <a href="${carouselItems[i].link}" class="btn btn-sm btn-palouse">${carouselItems[i].btn}</a>
+            </div></div>`;
+        slides += slide;
+        indicators += indicator;
+    }
+    // add indicators to page 
+    carouselIndicators.innerHTML = indicators;
+    // add slides to the page
+    carousel.innerHTML = slides;
+</script>
