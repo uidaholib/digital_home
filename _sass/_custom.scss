@@ -44,9 +44,10 @@ footer, footer a {
     padding-top: 4em;
     padding-bottom: 4em;
 }
-#index-carousel .carousel-item img {
-    width: 100%;
-    object-fit: cover;
-    height: 500px;
+#carouselInner {
+    .carousel-caption {
+        max-width: 750px;
+        margin-left: auto;
+    }
 }
-#imageCarousel .carousel-item { height: 500px; }
+#imageCarousel .carousel-item { height: 600px; }

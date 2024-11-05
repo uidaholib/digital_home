@@ -67,7 +67,7 @@ custom-foot: js/index-js.html
 
 </script>
 
-<div class="container-fluid my-4 px-5">
+<div class="container-fluid my-4 px-md-5">
     {%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid and item.status == "published"' -%}
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4">
         <div class="col">
@@ -124,7 +124,7 @@ custom-foot: js/index-js.html
     <div class="card mb-3">
         <div class="card-body">
 
-            <div id="imageCarousel" class="carousel slide bg-dark rounded mb-3" data-bs-ride="carousel">
+            <div id="imageCarousel" class="carousel slide rounded" data-bs-ride="carousel">
                 <div id="carouselIndicators" class="carousel-indicators">
                     
                 </div>
