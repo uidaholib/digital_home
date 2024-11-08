@@ -25,12 +25,12 @@ custom-foot: js/index-js.html
                         
                         <hr class="text-pride-gold w-50 mx-auto">
 
-                        <h2 class="card-title text-white h5">Browse Collection Topics:</h2>
+                        <h2 class="card-title text-white h5">Browse Collections by Topic:</h2>
                         {% assign topics = "Agriculture;Dams;Fire;Forests;Jazz;Mining;Oral History;Religion;Wilderness" | split: ';' %}
                         {% for t in topics %}
                         <a class="btn btn-palouse my-2 mx-1" href="{{ '/home/collections.html' | relative_url }}#{{ t | url_param_escape }}">{{ t }}</a>
                         {% endfor %}<br>
-                        <a class="btn btn-leather mt-4 mx-2 px-3" href="{{ '/home/collections.html' | relative_url }}">Browse All Collections</a>
+                        <a class="btn btn-leather mt-3 mx-2" href="{{ '/home/collections.html' | relative_url }}">Browse All Collections</a>
                         
                         <div class="text-end">
                             <a tabindex="0" role="button" class="btn btn-sm btn-outline-light ms-2 popover-dismiss" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-title="Digital Collection Tips" data-bs-content="Use the search box above to query all items in our complete digital collections index. To find individual collections, explore the browse topic buttons or other options in the navigation.">
