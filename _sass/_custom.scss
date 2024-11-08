@@ -19,7 +19,6 @@
     color: #191919;
 }
 
-
 /* override icon styles */
 .icon-nav {
     width: 1em;
@@ -39,3 +38,16 @@ footer, footer a {
 .border-pride-gold {
     border-color: #F1B300 !important;
 }
+
+/* index */
+#home-title-box {
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+#carouselInner {
+    .carousel-caption {
+        max-width: 750px;
+        margin-left: auto;
+    }
+}
+#imageCarousel .carousel-item { height: 600px; }
