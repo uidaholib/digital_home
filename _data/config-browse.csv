@@ -2,3 +2,4 @@ field,display_name,btn,hidden,sort_name
 categories,,true
 location,,true
 media_types,,true
+type,,,true
