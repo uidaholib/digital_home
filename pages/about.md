@@ -14,7 +14,7 @@ credits: true
 
 # About Digital Collections
 
-University of Idaho Library Digital Collections make tens of thousands of rare and unique items openly available online for research and learning.
+University of Idaho Library Digital Collections make tens of thousands of rare and unique items openly available online to enrich research and learning.
 The unique content includes digitized and born-digital materials curated by [Special Collections and Archives](https://www.lib.uidaho.edu/special-collections/), community partners, and scholarship projects.
 
 Digital Collections contains over [120 custom collection websites and exhibits]({{ '/home/collections.html' | relative_url }}), each providing features to browse, explore, and understand the items with meaningful context. 
@@ -27,10 +27,10 @@ New items, collections, and exhibits are continually added, along with ongoing w
 Contributors include employees across the library, student workers, fellows, researchers, and community partners.
 Our most up to date procedures and standards are shared at our [Digital Collections Documentation site](https://uidaholib.github.io/digital-collections-docs/).
 
-We invite you to explore, discover, and enjoy our unique collections!
+We invite you to explore, discover, and enjoy our distinctive collections!
 
 <a href="https://digital.lib.uidaho.edu/search" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg> Digital Collections Search</a>
-<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_eqZdsQyel8sKBAG?source_link=https://www.lib.uidaho.edu/digital/home/about.html" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg> Contact Form</a>
+<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_b8yflHg0wwXzmDk?source_link=https://www.lib.uidaho.edu/digital/home/about.html" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg> Contact Form</a>
 <a href="https://lib.uidaho.edu/help/" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/></svg> Library Help</a>
 {:.text-center}
 
@@ -72,7 +72,7 @@ Digital collections are a collaborative and ever evolving effort to open access 
 
 ## Contact
 
-<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_eqZdsQyel8sKBAG?source_link=https://www.lib.uidaho.edu/digital/home/about.html" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg> Contact Form</a>
+<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_b8yflHg0wwXzmDk?source_link=https://www.lib.uidaho.edu/digital/home/about.html" class="btn btn-outline-primary m-3"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/></svg> Contact Form</a>
 
 - [Evan Peter Williamson](https://www.lib.uidaho.edu/about/people/ewilliamson.html), Unit Head for Digital Scholarship and Open Strategies
 Digital; Digital Infrastructure Librarian; Co-Director of CDIL
