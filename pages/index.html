@@ -84,7 +84,7 @@ custom-foot: js/index-js.html
                 <div class="card-body">
                     <h3 class="card-title h4">Total Collections</h3>
                     <p class="card-text">
-                        <a class="text-dark" href="{{ '/home/collections.html' | relative_url }}"><svg class="bi icon-sprite" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/home/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg> {{ items | size }}</a>
+                        <a class="text-dark" href="{{ '/home/collections.html' | relative_url }}"><svg class="bi icon-sprite" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/home/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg> {{ items | where_exp: 'i', 'i.item_count' | size }}</a>
                     </p>
                     <h3 class="card-title h4">Total Items</h3>
                     {% assign items_count = 0 %}{% for i in items %}{% assign items_count = items_count | plus: i.item_count %}{% endfor %}
