@@ -1,4 +1,5 @@
 field,display_name,btn,hidden,sort_name
+created,,,true,Date Created
 categories,,true
 location,,true
 media_types,,true
