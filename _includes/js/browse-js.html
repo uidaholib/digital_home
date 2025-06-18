@@ -1,12 +1,5 @@
-{% if site.data.theme.browse-child-objects == true %}
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' -%}
-{% else %}
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid and item.parentid == nil' -%}
-{% endif %}
+{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid and item.status == "published"' -%}
 {%- assign fields = site.data.config-browse -%}
-{% unless site.data.theme.faceted-search or site.data.theme.advanced-search %}
-{% include js/browse-simple-js.html %}
-{% else %}
 <script>
 /**
  * BROWSE PAGE JAVASCRIPT - Less Janky Version
@@ -25,12 +18,12 @@
 var items = [
     {% for item in items %}
     { {% for f in fields %}{% if item[f.field] %}{{ f.field | escape | jsonify }}:{{ item[f.field] | strip | jsonify }}, {%- endif -%}{%- endfor -%}
-        {% if item.image_thumb %}"img": {{ item.image_thumb | relative_url | jsonify }}, {%- endif -%} 
-        {% if item.display_template %}"display_template": {{ item.display_template | jsonify }}, {%- endif -%}
-        {% if item.format %}"format": {{ item.format | jsonify }}, {%- endif -%}
+        {% if item.image_thumb %}"img": {{ item.image_thumb | relative_url | jsonify }}, {%- endif -%}
         {% if item.image_alt_text %}"alt": {{ item.image_alt_text | escape | jsonify }}, {%- endif -%}
-        "title":{{ item.title | strip | escape | jsonify }},
-        {% if item.parentid %}"parent": {{ item.parentid | jsonify }}, {%- endif -%}
+        "title":{{ item.title | strip | escape | jsonify }}, 
+        {% if item.tagline %}"tagline": {{ item.tagline | strip | escape | jsonify }}, {% endif %}
+        "description": {{ item.description | jsonify }},
+        "link": "{{ item.url }}",
         "id":{{ item.objectid | jsonify }} }{% unless forloop.last %},{% endunless %}{%- endfor -%}
 ];
 
@@ -54,51 +47,55 @@ var loadingIcon, filterTextBox, browseItemsDiv;
  */
 function makeCard(obj) {
     const placeholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E";
-    const itemHref = `{{ '/items/' | relative_url }}${ obj.parent ? obj.parent + ".html#" + obj.id : obj.id + ".html"}`;
-    
-    let card = '<div class="item col-lg-4 col-md-6 mb-2"><div class="card">';
-    
-    // Image or icon
+    const itemHref = obj.link; 
+    // find image
+    var imgSrc, thumbIcon;
+    // if there is a thumb in the csv display it
     if(obj.img) {
-        card += `<a href="${itemHref}"><img class="card-img-top lazyload" src="${placeholder}" data-src="${obj.img}" alt="${obj.alt || obj.title}"></a>`;
+        imgSrc = obj.img;
+    // else add an icon based on display_template or format
+    } else {
+        thumbIcon = getIcon(obj.template,obj.format,"thumb");
     }
-    
-    // Title
-    card += `<div class="card-body text-center"><h3 class="card-title h4"><a href="${itemHref}" class="text-dark">${obj.title}</a></h3>`;
-    
-    // Icon for items without images
-    if(!obj.img) {
-        const thumbIcon = getIcon(obj.display_template, obj.format, "thumb");
-        if(thumbIcon) card += `<p><a href="${itemHref}">${thumbIcon}</a></p>`;
-    }
-    
-    // Field data
-    card += '<p class="card-text">';
+    var imgAlt = obj.alt ? obj.alt : obj.title;
+    // other fields
+    var otherFields;
+    otherFields = '<p class="card-text">';
     {% for f in fields %}{% unless f.hidden == 'true' %}
     if(obj[{{ f.field | jsonify }}]){
-        {% if f.display_name %}card += '<strong>{{ f.display_name }}:</strong> ';{% endif %}
+        {% if f.display_name %}otherFields += '<strong>{{ f.display_name }}:</strong> ';{% endif %}
         {% if f.btn == 'true' %}
-        const btns = obj[{{ f.field | jsonify }}].split(";");
-        btns.forEach(btn => {
-            if(btn.trim()) {
-                card += `<a class="btn btn-sm btn-secondary m-1 text-wrap" href="{{ page.url | relative_url }}#{{ f.field }}:${encodeURIComponent(btn.trim())}">${btn.trim()}</a>`;
+        var btns = obj[{{ f.field | jsonify }}].split(";");
+        for (var i = 0, len = btns.length; i < len; i++) {
+            if(btns[i] != "") {
+            otherFields += '<a class="btn btn-sm btn-secondary m-1 text-wrap" href="{{ '/home/collections.html' | relative_url }}#' + encodeURIComponent(btns[i].trim()) + '">' + btns[i].trim() + '</a>';
             }
-        });
+        }
         {% else %}
-        card += obj[{{ f.field | jsonify }}];
+        otherFields += obj[{{ f.field | jsonify }}];
         {% endif %}
-        {% unless forloop.last %}card += '<br>';{% endunless %}
     }
     {% endunless %}{% endfor %}
-    card += '</p>';
+    otherFields += '</p>';
+
+    // build card
+    var card = `<div class="item col-lg-4 col-md-6 mb-2">
+        <div class="card">
+            <img class="card-img-top lazyload " src="${placeholder}" data-src="${imgSrc}" alt="${imgAlt}">
+            <div class="card-body text-center">
+                <h3 class="card-title "><a href="${itemHref}" class="text-dark">${obj.title}</a></h3>
+                ${ obj.tagline ? `<p><small>${obj.tagline}</small></p>` : ``}
+                <a href="${itemHref}" class="btn btn-clearwater" title="link to ${obj.title}">Visit Collection</a>
+                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${obj.id}" aria-expanded="false" aria-controls="collapse-${obj.id}">Details</button>
+                <div class="collapse" id="collapse-${obj.id}">
+                    <hr>
+                    ${otherFields}
+                    <p class="card-text">${obj.description}</p>
+                </div>
+            </div>
+        </div>
+    </div>`;
     
-    // Media type badge
-    if(obj.display_template) {
-        const mediaIcon = getIcon(obj.display_template, obj.format, "hidden");
-        card += `<p class="card-text"><small><a class="btn btn-sm btn-outline-secondary" href="{{ page.url | relative_url }}#display_template:${encodeURIComponent(obj.display_template)}">${obj.display_template.toUpperCase().replace("_"," ")} ${mediaIcon}</a></small></p>`;
-    }
-    
-    card += `<hr><a href="${itemHref}" class="btn btn-sm btn-light" title="link to ${obj.title}">View Full Record</a></div></div></div>`;
     return card;
 }
 
@@ -1045,4 +1042,3 @@ function setupEventHandlers() {
     }
 }
 </script>
-{% endunless %}

@@ -1,6 +1,5 @@
-field,display_name,btn,hidden,sort_name
-created,,,true,Date Created
+field,display_name,btn,hidden,sort_name,facet_name
+created,,,true,Date Created,Date Created
 categories,,true
 location,,true
-media_types,,true
-type,,,true
+media_types,,true,,,Media Types
