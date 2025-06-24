@@ -31,7 +31,7 @@ var items = [
 const validFields = [{% for f in fields %}"{{ f.field }}",{% endfor %}"title","display_template"];
 
 // Date field names - add your date fields here
-const dateFields = ['date', 'created', 'published', 'modified', 'issued', 'date_created', 'date_published'];
+const dateFields = ['date', 'created', 'date_start', 'date_end'];
 
 // Cache DOM elements
 var loadingIcon, filterTextBox, browseItemsDiv;
