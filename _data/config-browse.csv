@@ -1,6 +1,7 @@
-field,display_name,btn,hidden,sort_name
-created,,,true,Date Created
+field,display_name,btn,hidden,sort_name,facet_name
 categories,,true
 location,,true
-media_types,,true
-type,,,true
+media_types,,true,,,Media Types
+date_start,,,true,Start Date,Start Date
+date_end,,,true,End Date,End Date
+created,,,true,Date Published,Date Published
