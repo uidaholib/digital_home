@@ -50,14 +50,14 @@ The *best way* to report issues or provide feedback is to use the contact form l
 On Item pages, look for the button that says "Contact us about this record" found at the bottom of the item information section. 
 It will look like:
 
-<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_b8yflHg0wwXzmDk?source_link=https://www.lib.uidaho.edu/digital/home/help.html" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary">Contact us about this record 
+<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_3q11GEehNmqtRVY?source_link=https://www.lib.uidaho.edu/digital/home/help.html" target="_blank" rel="noopener" class="btn btn-sm btn-outline-secondary">Contact us about this record 
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi icon-sprite" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"></path><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"></path></svg>
     <span class="visually-hidden">(opens a new window)</span>
 </a>
 
 All other pages will have a button available in the footer on the bottom right that looks like:
 
-<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_b8yflHg0wwXzmDk?source_link=https://www.lib.uidaho.edu/digital/home/help.html" class="btn btn-sm btn-outline-lupine">Website Feedback</a>
+<a href="https://uidaho.co1.qualtrics.com/jfe/form/SV_3q11GEehNmqtRVY?source_link=https://www.lib.uidaho.edu/digital/home/help.html" class="btn btn-sm btn-outline-lupine">Website Feedback</a>
 
 Click on the link, fill in the form with as much specific detail as possible (including sources or how to recreate the issue), and be sure to provide an email address if you would like a response. 
 
