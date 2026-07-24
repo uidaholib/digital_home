@@ -1,0 +1,21 @@
+---
+# custom libapps css
+# includes some theming options
+# pulled in from "theme.yml" and "config-theme-colors.csv"
+---
+@charset "utf-8";
+
+/* base variables pulled from theme.yml */
+$theme-base-font-family: {{ site.data.theme.base-font-family | default: "'Public Sans', sans-serif" }};
+$theme-base-font-size: {{ site.data.theme.base-font-size | default: '""' }};
+$theme-text-color: {{ site.data.theme.text-color | default: '""' }};
+$theme-link-color: {{ site.data.theme.link-color | default: '""' }};
+
+
+/* base tweaks to Bootstrap */
+@forward "lib-apps" with (
+  $base-font-family: $theme-base-font-family,
+  $base-font-size: $theme-base-font-size,
+  $text-color: $theme-text-color,
+  $link-color: $theme-link-color
+);

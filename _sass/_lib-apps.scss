@@ -1,0 +1,47 @@
+/* 
+    Put your custom SCSS here! 
+    This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
+*/
+
+
+/* set up base variable to override from cb.scss */
+$base-font-family: "" !default;
+$base-font-size: "" !default;
+$text-color: "" !default;
+$link-color: "" !default;
+
+/* set font base set in theme.yml */
+body {
+    @if $base-font-family != "" { font-family: $base-font-family; }
+    @if $base-font-size != "" { font-size: $base-font-size; }
+    @if $text-color != "" { color: $text-color; }
+}
+
+/* navbar */
+#tower-logo {
+    max-height: 45px;
+}
+#nav-logo {
+    max-height: 45px;
+}
+.bg-dark {
+    background-color: rgba(25, 25, 25, var(--bs-bg-opacity)) !important;
+}
+
+// fix pride gold outlines
+.btn-outline-primary, .btn-outline-pride-gold {
+    color: #191919;
+}
+
+/* footer */
+footer, footer a {
+    color:white !important;
+    font-weight: 300;
+    background-color: #191919;
+}
+#footer-logo {
+    max-height: 120px;
+}
+.border-pride-gold {
+    border-color: #F1B300 !important;
+}
