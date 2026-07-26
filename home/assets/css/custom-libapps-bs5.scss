@@ -6,10 +6,10 @@
 @charset "utf-8";
 
 /* base variables pulled from theme.yml */
-$theme-base-font-family: {{ site.data.theme.base-font-family | default: "'Public Sans', sans-serif" }};
+$theme-base-font-family: "Public Sans", sans-serif;
 $theme-base-font-size: {{ site.data.theme.base-font-size | default: '""' }};
 $theme-text-color: {{ site.data.theme.text-color | default: '""' }};
-$theme-link-color: {{ site.data.theme.link-color | default: '""' }};
+$theme-link-color: ""; 
 
 
 /* base tweaks to Bootstrap */

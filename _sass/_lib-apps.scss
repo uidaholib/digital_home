@@ -3,7 +3,6 @@
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 
-
 /* set up base variable to override from cb.scss */
 $base-font-family: "" !default;
 $base-font-size: "" !default;
@@ -12,9 +11,11 @@ $link-color: "" !default;
 
 /* set font base set in theme.yml */
 body {
-    @if $base-font-family != "" { font-family: $base-font-family; }
-    @if $base-font-size != "" { font-size: $base-font-size; }
-    @if $text-color != "" { color: $text-color; }
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.2em;
+    color: #191919;
 }
 
 /* navbar */
