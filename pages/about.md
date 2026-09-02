@@ -81,4 +81,5 @@ Digital collections are a collaborative and ever evolving effort to open access 
 Digital; Digital Infrastructure Librarian; Co-Director of CDIL
 - [Andrew Weymouth](https://www.lib.uidaho.edu/about/people/aweymouth.html), Digital Initiatives Librarian
 - [Kevin Dobbins](https://www.lib.uidaho.edu/about/people/kdobbins.html), Digital Labs Manager
+- [Jack Kredell](https://www.lib.uidaho.edu/about/people/jkredell.html), Digital Projects Manager
 - [Devin Becker](https://www.lib.uidaho.edu/about/people/dbecker.html), Associate Dean Research and Instruction; Co-Director of CDIL
