@@ -21,8 +21,9 @@ custom-foot: js/browse-js.html
                     {% assign cap-field = f.field | capitalize %}
                     <option value="{{ f.field }}">{{ f.facet_name | default: f.display_name | default: cap-field }}</option>
                     {% endfor %}
+                    <option value="display_template">Content Type</option>
                     {% if site.data.theme.advanced-search == true %}
-                    <option value="" disabled>─────────────</option>
+                    <option value="" disabled><hr></option>
                     <option value="advanced">Advanced Search...</option>{% endif %}
                 </select>
                 <!-- Mobile filter button - shows only on small screens -->
@@ -40,6 +41,7 @@ custom-foot: js/browse-js.html
                         {% assign cap-field = f.field | capitalize %}
                         <button class="dropdown-item" type="button" data-field="{{ f.field }}">{{ f.facet_name | default: f.display_name | default: cap-field }}</button>
                         {% endfor %}
+                        <button class="dropdown-item" type="button" data-field="display_template">Content Type</button>
                         {% if site.data.theme.advanced-search == true %}
                         <div class="dropdown-divider"></div>
                         <button class="dropdown-item" type="button" data-field="advanced">Advanced Search...</button>
@@ -50,9 +52,9 @@ custom-foot: js/browse-js.html
                 <!-- Update the date range inputs section -->
                 <div id="dateRangeInputs" class="date-range-inputs">
                     <div class="date-input-group">
-                        <input type="text" id="startDate" class="ms-2 form-control" placeholder="Start Date">
+                        <input type="text" id="startDate" class="ms-2 form-control" aria-label="Start Date" placeholder="Start Date">
                         <span class="date-separator">to</span>
-                        <input type="text" id="endDate" class="me-2 form-control" placeholder="End Date">
+                        <input type="text" id="endDate" class="me-2 form-control" aria-label="End Date" placeholder="End Date">
                     </div>
                 </div>
                 <button class="btn btn-success" type="submit" title="Filter items" id="filterButton" >Search</button>

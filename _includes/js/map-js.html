@@ -1,13 +1,17 @@
-{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid and item.status == "published"' -%}
+{% if site.data.theme.map-child-objects == true %}
+{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid' -%}
+{% else %}
+{%- assign items = site.data[site.metadata] | where_exp: 'item','item.objectid and item.parentid == nil' -%}
+{% endif %}
 {%- assign items = items | where_exp: 'item','item.latitude != nil and item.longitude != nil' -%}
 {%- assign fields = site.data.config-map -%}
 <!-- load leaflet dependencies -->
-<script src="{{ '/leaflet/leaflet.js' | prepend: site.digital-assets }}"></script>
-<script src="{{ '/leaflet/Leaflet.fullscreen.min.js' | prepend: site.digital-assets }}"></script>
-{% if site.data.theme.map-search == true %}<script src="{{ '/leaflet/fuse.min.js' | prepend: site.digital-assets }}"></script>
-<script src="{{ '/leaflet/leaflet.fusesearch.js' | prepend: site.digital-assets }}"></script>{% endif %}
-{% if site.data.theme.map-cluster == true %}<script src="{{ '/leaflet/leaflet.markercluster.js' | prepend: site.digital-assets }}"></script>{% endif %}
-{% if site.data.theme.map-search == true and site.data.theme.map-cluster == true %}<script src="{{ '/leaflet/leaflet.markercluster.freezable.js' | prepend: site.digital-assets }}"></script>{% endif %}
+<script src="{{ site.lib-assets | default: '/assets/lib' | relative_url }}/leaflet/leaflet.js"></script>
+<script src="{{ site.lib-assets | default: '/assets/lib' | relative_url }}/leaflet/Leaflet.fullscreen.min.js"></script>
+{% if site.data.theme.map-search == true %}<script src="{{ site.lib-assets | default: '/assets/lib' | relative_url }}/leaflet/fuse.min.js"></script>
+<script src="{{ site.lib-assets | default: '/assets/lib' | relative_url }}/leaflet/leaflet.fusesearch.js"></script>{% endif %}
+{% if site.data.theme.map-cluster == true %}<script src="{{ site.lib-assets | default: '/assets/lib' | relative_url }}/leaflet/leaflet.markercluster.js"></script>{% endif %}
+{% if site.data.theme.map-search == true and site.data.theme.map-cluster == true %}<script src="{{ site.lib-assets | default: '/assets/lib' | relative_url }}/leaflet/leaflet.markercluster.freezable.js"></script>{% endif %}
 
 <script>
 (function(){
@@ -22,7 +26,7 @@
         {% if item.format %}"format": {{ item.format | escape | jsonify }}, {%- endif -%}
         {% if item.image_alt_text %}"alt": {{ item.image_alt_text | escape | jsonify }}, {%- endif -%}
         {% if item.parentid %}"parent": {{ item.parentid | jsonify }}, {%- endif -%}
-        "title": {{ item.title | escape | jsonify }}, "link": "{{ item.url }}",
+        "title": {{ item.title | escape | jsonify }},
         "id": {{ item.objectid | jsonify }} 
     } }{% unless forloop.last %}, {% endunless %}{% endfor %}
     ]};
@@ -35,7 +39,7 @@
     var markerFilter = url.searchParams.get('marker') ? url.searchParams.get('marker') : "";
 
     /* init map */
-    var map = L.map('map');
+    var map = L.map('mapContainer');
 
     /* add map layer options */
     var Esri_WorldStreetMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -114,7 +118,7 @@
         {% if site.data.theme.map-search == true %}/* bind feature for search */
         feature.layer = layer;{% endif %}
         // find item link
-        var itemHref = feature.properties.link;
+        var itemHref = `{{ '/items/' | relative_url }}${ feature.properties.parent ? feature.properties.parent + ".html#" + feature.properties.id : feature.properties.id + ".html"}`;
         // find image
         var imgAlt = feature.properties.alt ? feature.properties.alt : feature.properties.title;
         var thumbImg;
@@ -132,8 +136,7 @@
             popupTemplate += '<strong>{{ f.display_name }}:</strong> ' + feature.properties[{{ f.field | escape | jsonify }}] + '<br>'; 
         }
         {% endif %}{% endfor %}
-        popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >Visit Collection</a></div>';
-
+        popupTemplate += '</p><div class="text-center"><a class="btn btn-light" href="' + itemHref + '" >View Item</a></div>';
         layer.bindPopup(popupTemplate);
     }
     function objectMarkers(feature,latlng) {
